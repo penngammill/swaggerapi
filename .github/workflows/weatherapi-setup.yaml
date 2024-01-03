@@ -1,0 +1,29 @@
+name: WeatherAPI Setup
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  start-weather-api:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout swaggerapi repository
+      uses: actions/checkout@v2
+      with:
+        repository: swaggerapi/swaggerapi
+        ref: main
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '8.0.x'  # Use a version that supports .NET 8.0
+
+    - name: Change to WeatherAPI directory
+      run: cd WeatherAPI
+
+    - name: Restore and run WeatherAPI
+      run: |
+        dotnet restore
+        dotnet run --project WeatherAPI.csproj &
