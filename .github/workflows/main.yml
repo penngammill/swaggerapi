@@ -28,5 +28,6 @@ jobs:
     - name: Publish artifact
       if: success()
       run: |
+        cd WeatherAPI
         dotnet publish -c Release -o ./publish
         echo "##vso[artifact.upload containerfolder=publish;artifactname=WeatherAPI]"
