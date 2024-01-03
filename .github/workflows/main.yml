@@ -20,6 +20,7 @@ jobs:
 
     - name: Build and test
       run: |
+        cd WeatherAPI
         dotnet restore
         dotnet build --configuration Release
         dotnet test --no-restore --verbosity normal
