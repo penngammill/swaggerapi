@@ -18,6 +18,9 @@ jobs:
       with:
         dotnet-version: '6.0.x'
 
+    - name: Change to project directory
+      run: cd WeatherAPI
+
     - name: Build and test
       run: |
         dotnet restore
@@ -29,4 +32,3 @@ jobs:
       run: |
         dotnet publish -c Release -o ./publish
         echo "##vso[artifact.upload containerfolder=publish;artifactname=WeatherAPI]"
-
