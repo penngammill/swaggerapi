@@ -1,8 +1,13 @@
 name: WeatherAPI Setup
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Branch or tag ref to run the workflow on'
+        required: true
+        default: 'main'
+
 
 jobs:
   start-weather-api:
