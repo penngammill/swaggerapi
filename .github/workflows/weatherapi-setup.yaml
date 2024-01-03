@@ -26,10 +26,9 @@ jobs:
         dotnet-version: '8.0.x'  # Use a version that supports .NET 8.0
 
     - name: Change to WeatherAPI directory
-      # run: cd WeatherAPI
+      run: cd WeatherAPI
 
     - name: Restore and run WeatherAPI
       run: |
-        cd WeatherAPI
         dotnet restore
         dotnet run --project WeatherAPI.csproj
