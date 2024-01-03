@@ -12,7 +12,7 @@ jobs:
     - name: Checkout swaggerapi repository
       uses: actions/checkout@v2
       with:
-        repository: swaggerapi/swaggerapi
+        repository: penngammill/swaggerapi
         ref: main
 
     - name: Set up .NET
