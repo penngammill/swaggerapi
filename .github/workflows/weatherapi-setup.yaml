@@ -26,4 +26,4 @@ jobs:
     - name: Restore and run WeatherAPI
       run: |
         dotnet restore
-        dotnet run --project WeatherAPI.csproj &
+        dotnet run --project WeatherAPI.csproj
